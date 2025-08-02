@@ -1,31 +1,18 @@
-<build>
-    <plugins>
-        <!-- Spring Boot Plugin -->
-        <plugin>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-        </plugin>
-
-        <!-- CheckStyle Plugin -->
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-checkstyle-plugin</artifactId>
-            <version>3.3.0</version> <!-- Use a stable version -->
-            <executions>
-                <execution>
-                    <id>checkstyle</id>
-                    <phase>verify</phase>
-                    <goals>
-                        <goal>checkstyle</goal>
-                    </goals>
-                </execution>
-            </executions>
-            <configuration>
-                <outputFileFormat>xml</outputFileFormat>
-                <outputFile>${project.build.directory}/checkstyle-result.xml</outputFile>
-                <!-- Optional: you can add a custom configLocation here -->
-                <!-- <configLocation>checkstyle.xml</configLocation> -->
-            </configuration>
-        </plugin>
-    </plugins>
-</build>
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-checkstyle-plugin</artifactId>
+  <version>3.3.0</version>
+  <executions>
+    <execution>
+      <id>checkstyle</id>
+      <phase>verify</phase>
+      <goals>
+        <goal>checkstyle</goal>
+      </goals>
+    </execution>
+  </executions>
+  <configuration>
+    <outputFileFormat>xml</outputFileFormat>
+    <outputFile>${project.build.directory}/checkstyle-result.xml</outputFile>
+  </configuration>
+</plugin>
